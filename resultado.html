@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <title>Resultado - Calculadora</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: white;
+
+            width: 450px;
+
+            padding: 40px;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        h1 {
+            color: #166534;
+            margin-bottom: 25px;
+        }
+
+        .conta {
+            background-color: #f0fdf4;
+
+            border: 2px solid #bbf7d0;
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+            margin-bottom: 30px;
+        }
+
+        .conta h2 {
+            color: #333;
+            font-size: 25px;
+        }
+
+        .resultado {
+            color: #16a34a;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .botoes {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        button {
+            width: 100%;
+
+            background-color: #16a34a;
+            color: white;
+
+            border: none;
+
+            padding: 13px;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #15803d;
+        }
+
+        .home {
+            display: block;
+
+            color: #16a34a;
+
+            text-decoration: none;
+
+            margin-top: 15px;
+        }
+
+        .home:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Resultado</h1>
+
+        <div class="conta">
+
+            <h2>
+                {{ numero1 }}
+                {{ operador }}
+                {{ numero2 }}
+                =
+                <span class="resultado">
+                    {{ resultado }}
+                </span>
+            </h2>
+
+        </div>
+
+        <div class="botoes">
+
+            <a href="/operacao">
+                <button>Nova operação</button>
+            </a>
+
+        </div>
+
+        <a href="/" class="home">
+            Voltar para Home
+        </a>
+
+    </div>
+
+</body>
+
+</html>
